@@ -10,10 +10,10 @@ function all_users() {
   return db("users");
 }
 
-function single_user(id) {
-  return db
-    .from("users")
-    .innerJoin("departments", "use_dep_key", "departments.id");
+function single_user(name) {
+  return db("users")
+    .where("use_name", name)
+    .first();
 }
 
 function add_user(user) {
