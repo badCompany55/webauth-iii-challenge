@@ -1,4 +1,15 @@
 {
+  "name": "token",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "server": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "express": "^4.16.4",
@@ -9,26 +20,7 @@
     "prettier": "^1.16.4",
     "sqlite3": "^4.0.6"
   },
-  "scripts": {
-    "start": "node index.js",
-    "server": "nodemon index.js"
-  },
-  "name": "webauth-iii-challenge",
-  "description": "## Topics",
-  "version": "1.0.0",
-  "main": "index.js",
   "devDependencies": {
     "nodemon": "^1.18.10"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/badCompany55/webauth-iii-challenge.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/badCompany55/webauth-iii-challenge/issues"
-  },
-  "homepage": "https://github.com/badCompany55/webauth-iii-challenge#readme"
+  }
 }

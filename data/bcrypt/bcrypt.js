@@ -1,34 +1,33 @@
 const bcrypt = require("bcryptjs");
 
 module.exports = {
-  theHash,
-  bcryptLogin
+  new_teacher_hash,
+  login_hash_check
 };
 
-async function theHash(pass, salt) {
+async function new_teacher_hash(input_pass, salt) {
   try {
-    const newHash = await new Promise((res, rej) => {
-      bcrypt.hash(pass, salt, function(err, hash) {
+    const theHash = await new Promise((res, rej) => {
+      bcrypt.hash(input_pass, salt, function(err, hash) {
         if (err) rej(err);
         res(hash);
       });
     });
-    return newHash;
+    return theHash;
   } catch (err) {
     console.log(err);
   }
 }
 
-async function bcryptLogin(pass_word, user_pass_word) {
+async function login_hash_check(input_pass, user_pass) {
   try {
-    const check = await new Promise((res, rej) => {
-      bcrypt.compare(pass_word, user_pass_word, function(err, login) {
+    const loginCheck = await new Promise((res, rej) => {
+      bcrypt.compare(input_pass, user_pass, function(err, pass) {
         if (err) rej(err);
-        res(login);
+        res(pass);
       });
     });
-    // console.log(check);
-    return check;
+    return loginCheck;
   } catch (err) {
     console.log(err);
   }
