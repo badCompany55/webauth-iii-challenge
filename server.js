@@ -6,9 +6,16 @@ const loginRouter = require("./routes/loginRouter.js");
 const teachersRouter = require("./routes/teachersRouter.js");
 
 const server = express();
+const cors = require("cors");
+
 const json = express.json;
 
 server.use(helm(), json(), morg("dev"));
+server.use(
+  cors({
+    origin: "http://localhost:3000"
+  })
+);
 server.use("/api/register", registerRouter);
 server.use("/api/login", loginRouter);
 server.use("/api/teachers", teachersRouter);
