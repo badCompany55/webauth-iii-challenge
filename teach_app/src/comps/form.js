@@ -75,29 +75,33 @@ const Form = props => {
       >
         Please Log In
       </div>
-      <form className="form">
-        <div className="nameField setForm">
-          <label htmlFor="name" className="labelName label">
-            Name:{" "}
-          </label>
-          <input type="text" id="name" onChange={capInput} />
-        </div>
-        <div className="passField setForm">
-          <label htmlFor="password" className="labelPass label">
-            Password:{" "}
-          </label>
-          <input type="text" id="password" onChange={capInput} />
-        </div>
-        {props.history.location.pathname === "/signup" ? (
-          <div className="department setForm">
-            <label htmlFor="department" className="label">
-              Department ID:{" "}
+      {signupMsg ? (
+        <div className="success"> Successful Signup </div>
+      ) : (
+        <form className="form">
+          <div className="nameField setForm">
+            <label htmlFor="name" className="labelName label">
+              Name:{" "}
             </label>
-            <input type="number" id="department" onChange={capInput} />
+            <input type="text" id="name" onChange={capInput} />
           </div>
-        ) : null}
-        <button className="formSubmit">Submit</button>
-      </form>
+          <div className="passField setForm">
+            <label htmlFor="password" className="labelPass label">
+              Password:{" "}
+            </label>
+            <input type="text" id="password" onChange={capInput} />
+          </div>
+          {props.history.location.pathname === "/signup" ? (
+            <div className="department setForm">
+              <label htmlFor="department" className="label">
+                Department ID:{" "}
+              </label>
+              <input type="number" id="department" onChange={capInput} />
+            </div>
+          ) : null}
+          <button className="formSubmit">Submit</button>
+        </form>
+      )}
     </div>
   );
 };

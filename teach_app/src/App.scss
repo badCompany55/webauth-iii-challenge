@@ -27,6 +27,27 @@
 	display: none;
 }
 
+.success {
+	margin-bottom: 15px;
+	padding: 5px;
+	background: green;
+	color: white;
+
+}
+
+.home {
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	.fa-home {
+		font-size: 500px;
+		color: darkblue;
+	}
+}
+
 .navBar {
 	padding-bottom: 15px;
 }
@@ -51,4 +72,38 @@
 
 .formSubmit {
 	width: 32%;
+	}
+
+	.navBar {
+		margin: 0 auto;
+		margin-top: 10px;
+		display: flex;
+		width: 80%;
+		justify-content: space-between;
+
+		a {
+			text-decoration: none;
+			color: darkblue;
+			padding: 5px;
+
+			&:hover {
+				background-color: darkblue;
+				color: white;
+				border-radius: 5px;
+			}
+		}
+	}
+
+	button {
+		background-color: darkblue;
+		color: white;
+		border: 1px solid darkblue;
+		border-radius: 5px;
+		font-weight: bold;
+		
+		&:hover {
+			cursor: pointer;
+			background-color: white;
+			color: darkblue;
+		}
 	}
